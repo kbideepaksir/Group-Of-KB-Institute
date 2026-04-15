@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission | KB INSTITUTE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+/* TOPBAR */
+.topbar{
+    background:#0d47a1;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+}
+.topbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FORM BOX */
+.form-box{
+    width:350px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 0px 15px gray;
+}
+
+.form-box h2{
+    text-align:center;
+    color:#0d47a1;
+}
+
+/* INPUT */
+input, select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:10px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:darkred;
+}
+
+/* FOOTER */
+.footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:green;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<a href="student-login.html">Student Login</a>
+<a href="teacher-login.html">Teacher Login</a>
+<a href="admin-login.html">Admin Login</a>
+<a href="result.html">Result</a>
+</div>
+
+<!-- FORM -->
+<div class="form-box">
+<h2>New Admission Form</h2>
+
+<form id="registerForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="text" id="mobile" placeholder="Mobile Number" required>
+
+<select id="board" required>
+<option value="">Select Board</option>
+<option>UP Board</option>
+<option>CBSE Board</option>
+</select>
+
+<select id="class" required>
+<option value="">Select Class</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+</select>
+
+<input type="password" id="password" placeholder="Create Password" required>
+
+<button type="submit" class="btn">Submit</button>
+
+</form>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>GROUP OF KB INSTITUTE</p>
+<p>Contact: 9369666347</p>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919369666347" class="whatsapp">💬</a>
+
+<!-- SCRIPT -->
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let studentData = {
+        name: document.getElementById("name").value,
+        mobile: document.getElementById("mobile").value,
+        board: document.getElementById("board").value,
+        class: document.getElementById("class").value,
+        password: document.getElementById("password").value,
+        status: "pending"
+    };
+
+    console.log(studentData);
+
+    alert("Registration Submitted Successfully!");
+});
+</script>
+
+</body>
+</html>
