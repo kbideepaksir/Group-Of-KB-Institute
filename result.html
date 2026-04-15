@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Result | KB INSTITUTE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+/* TOPBAR */
+.topbar{
+    background:#0d47a1;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+}
+.topbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SEARCH BOX */
+.search-box{
+    width:350px;
+    margin:50px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px gray;
+    text-align:center;
+}
+
+.search-box h2{
+    color:#0d47a1;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:10px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* RESULT */
+.result{
+    display:none;
+    margin-top:20px;
+    text-align:left;
+    background:#e3f2fd;
+    padding:15px;
+    border-radius:8px;
+}
+
+/* FOOTER */
+.footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:green;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<a href="index.html">Home</a>
+<a href="student-login.html">Student Login</a>
+<a href="register.html">Admission</a>
+</div>
+
+<!-- SEARCH -->
+<div class="search-box">
+<h2>Check Your Result</h2>
+
+<input type="text" id="roll" placeholder="Enter Roll Number">
+
+<button class="btn" onclick="showResult()">Search Result</button>
+
+<div class="result" id="resultBox">
+<p><b>Name:</b> Rahul Kumar</p>
+<p><b>Class:</b> 10</p>
+<p><b>Marks:</b> 450/500</p>
+<p><b>Status:</b> Pass</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>GROUP OF KB INSTITUTE</p>
+<p>Contact: 9369666347</p>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919369666347" class="whatsapp">💬</a>
+
+<!-- SCRIPT -->
+<script>
+function showResult(){
+    let roll = document.getElementById("roll").value;
+
+    if(roll === ""){
+        alert("Please enter roll number");
+    } else {
+        document.getElementById("resultBox").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
