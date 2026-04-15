@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | KB INSTITUTE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+/* TOPBAR */
+.topbar{
+    background:#0d47a1;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+}
+.topbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:20px;
+    color:#0d47a1;
+}
+
+/* CARD */
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    box-shadow:0 0 10px gray;
+    border-radius:8px;
+}
+
+/* BUTTONS */
+.btn{
+    padding:8px 15px;
+    margin:5px;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+
+.approve{background:green;}
+.reject{background:red;}
+
+/* FOOTER */
+.footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<a href="index.html">Home</a>
+<a href="student-login.html">Student Login</a>
+<a href="result.html">Result</a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+<h1>Admin Dashboard</h1>
+<p>Manage Student Admissions</p>
+</div>
+
+<!-- STUDENT LIST -->
+<div class="container">
+
+<div class="card">
+<p><b>Name:</b> ____</p>
+<p><b>Mobile:</b> ____</p>
+<p><b>Class:</b> ____</p>
+<p><b>Board:</b> ____</p>
+<p><b>Status:</b> Pending</p>
+
+<button class="btn approve" onclick="approve(this)">Approve</button>
+<button class="btn reject" onclick="reject(this)">Reject</button>
+</div>
+
+<div class="card">
+<p><b>Name:</b> ____</p>
+<p><b>Mobile:</b> ____</p>
+<p><b>Class:</b> ____</p>
+<p><b>Board:</b> ____</p>
+<p><b>Status:</b> Pending</p>
+
+<button class="btn approve" onclick="approve(this)">Approve</button>
+<button class="btn reject" onclick="reject(this)">Reject</button>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>GROUP OF KB INSTITUTE</p>
+<p>Admin Panel</p>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function approve(btn){
+    btn.parentElement.querySelector("p:nth-child(5)").innerHTML = "<b>Status:</b> Approved";
+}
+
+function reject(btn){
+    btn.parentElement.querySelector("p:nth-child(5)").innerHTML = "<b>Status:</b> Rejected";
+}
+</script>
+
+</body>
+</html>

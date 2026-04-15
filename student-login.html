@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login | KB INSTITUTE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+/* TOPBAR */
+.topbar{
+    background:#0d47a1;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+}
+.topbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* LOGIN BOX */
+.login-box{
+    width:320px;
+    margin:80px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px gray;
+}
+
+.login-box h2{
+    text-align:center;
+    color:#0d47a1;
+}
+
+/* INPUT */
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:10px;
+    background:#0d47a1;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#08306b;
+}
+
+/* LINK */
+.link{
+    text-align:center;
+    margin-top:10px;
+}
+
+/* FOOTER */
+.footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:green;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<a href="index.html">Home</a>
+<a href="register.html">New Admission</a>
+<a href="result.html">Result</a>
+</div>
+
+<!-- LOGIN FORM -->
+<div class="login-box">
+<h2>Student Login</h2>
+
+<form id="loginForm">
+
+<input type="text" id="mobile" placeholder="Enter Mobile Number" required>
+
+<input type="password" id="password" placeholder="Enter Password" required>
+
+<button type="submit" class="btn">Login</button>
+
+</form>
+
+<div class="link">
+<p>New Student? <a href="register.html">Register Here</a></p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>GROUP OF KB INSTITUTE</p>
+<p>Contact: 9369666347</p>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919369666347" class="whatsapp">💬</a>
+
+<!-- SCRIPT -->
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let mobile = document.getElementById("mobile").value;
+    let password = document.getElementById("password").value;
+
+    console.log("Login Attempt:", mobile, password);
+
+    alert("Login system future me database se connect hoga");
+});
+</script>
+
+</body>
+</html>
