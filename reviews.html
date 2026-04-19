@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Reviews | KB INSTITUTE</title>
+
 <style>
 body{font-family:Arial;margin:0;background:#f5f5f5}
 
@@ -16,6 +17,29 @@ body{font-family:Arial;margin:0;background:#f5f5f5}
     padding:15px;
     border-radius:10px;
     box-shadow:0 0 10px gray;
+}
+
+/* Form */
+.form-box{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    background:#0d47a1;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
 }
 
 .footer{background:#0d47a1;color:white;text-align:center;padding:15px}
@@ -33,6 +57,9 @@ body{font-family:Arial;margin:0;background:#f5f5f5}
 <h1>Student Reviews</h1>
 </div>
 
+<!-- Existing Reviews -->
+<div id="reviews-container">
+
 <div class="review">
 <p>“KB Institute best coaching hai, Deepak Sir bahut achha padhate hain.”</p>
 <h4>- Student</h4>
@@ -43,9 +70,62 @@ body{font-family:Arial;margin:0;background:#f5f5f5}
 <h4>- Student</h4>
 </div>
 
+</div>
+
+<!-- Add Review Form -->
+<div class="form-box">
+<h2>Add Your Review</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+<textarea id="review" placeholder="Write your review"></textarea>
+
+<button onclick="addReview()">Submit</button>
+</div>
+
 <div class="footer">
 <p>GROUP OF KB INSTITUTE</p>
 </div>
+
+<script>
+// Load saved reviews
+window.onload = function() {
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.forEach(r => showReview(r.name, r.text));
+};
+
+// Add review
+function addReview(){
+    let name = document.getElementById("name").value;
+    let text = document.getElementById("review").value;
+
+    if(name === "" || text === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    let reviewData = {name:name, text:text};
+
+    // Save to localStorage
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.push(reviewData);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    // Show on page
+    showReview(name, text);
+
+    // Clear fields
+    document.getElementById("name").value = "";
+    document.getElementById("review").value = "";
+}
+
+// Show review on page
+function showReview(name, text){
+    let div = document.createElement("div");
+    div.className = "review";
+    div.innerHTML = `<p>“${text}”</p><h4>- ${name}</h4>`;
+    document.getElementById("reviews-container").appendChild(div);
+}
+</script>
 
 </body>
 </html>
